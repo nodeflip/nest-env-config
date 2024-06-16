@@ -2,14 +2,14 @@
 
 ## Overview
 
-The `nest-env-config` module provides a convenient way to manage environment configuration in your NestJS applications. By using decorators, you can define configuration properties that are automatically populated from environment variables with optional default values. This module ensures that your configuration is strongly typed and easily accessible throughout your application.
+The `@nodeflip/nest-env-config` module provides a convenient way to manage environment configuration in your NestJS applications. By using decorators, you can define configuration properties that are automatically populated from environment variables with optional default values. This module ensures that your configuration is strongly typed and easily accessible throughout your application.
 
 ## Installation
 
 To install the module, run the following command:
 
 ```bash
-npm install nest-env-config
+npm install @nodeflip/nest-env-config
 ```
 
 ## How to use it ?
@@ -18,7 +18,7 @@ First, import the EnvironmentConfigModule in your application's module and call 
 
 ```typescript
 import { Module } from '@nestjs/common';
-import { EnvironmentConfigModule } from 'nest-env-config';
+import { EnvironmentConfigModule } from '@nodeflip/nest-env-config';
 import { AppConfig } from './app-config';
 
 @Module({
@@ -30,7 +30,7 @@ export class AppModule {}
 ### Creating a Configuration Class
 Define a configuration class and use the @Prop decorator to specify the environment variables and their default values.
 ```typescript
-import { Prop } from 'nest-env-config';
+import { Prop } from '@nodeflip/nest-env-config';
 
 export class AppConfig {
   @Prop('APP_PORT', 3000)
@@ -48,7 +48,7 @@ Inject the EnvironmentConfigService into your services to access the configurati
 
 ```typescript
 import { Injectable } from '@nestjs/common';
-import { EnvironmentConfigService } from 'nest-env-config';
+import { EnvironmentConfigService } from '@nodeflip/nest-env-config';
 import { AppConfig } from './app-config';
 
 @Injectable()
@@ -68,7 +68,7 @@ The EnvironmentConfigModule can be easily tested using the NestJS testing utilit
 
 ##### Example Test Configuration Class
 ```typescript
-import { Prop } from 'nest-env-config';
+import { Prop } from '@nodeflip/nest-env-config';
 
 export class DBConfig {
   @Prop('DB_NAME', 'test_db')
@@ -93,8 +93,8 @@ export class DBConfig {
 ##### Example Test Suite
 ```typescript
 import { Test, TestingModule } from '@nestjs/testing';
-import { EnvironmentConfigModule } from 'nest-env-config';
-import { EnvironmentConfigService } from 'nest-env-config';
+import { EnvironmentConfigModule } from '@nodeflip/nest-env-config';
+import { EnvironmentConfigService } from '@nodeflip/nest-env-config';
 import { DBConfig } from './db-config';
 
 describe('EnvironmentConfigService', () => {
@@ -165,4 +165,4 @@ This project is licensed under the MIT License.
 - `@nestjs/core`
 - `reflect-metadata`
 
-Enjoy using `nest-env-config`!
+Enjoy using `@nodeflip/nest-env-config`!
