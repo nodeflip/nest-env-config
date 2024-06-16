@@ -3,5 +3,5 @@
 /src/**/*.test.ts
 
 # Exclude test files from dist
-/dist/**/*.spec.js
-/dist/**/*.test.js
+/dist/test
+src

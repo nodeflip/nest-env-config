@@ -1,6 +1,6 @@
 {
   "name": "@nodeflip/nest-env-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An environment configuration module for NestJS that allows for easy configuration using decorators.",
   "main": "dist/index.js",
   "scripts": {
@@ -33,7 +33,7 @@
   "author": "Ashish Kumar",
   "license": "MIT",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/nodeflip"
+    "registry": "https://registry.npmjs.org"
   },
   "private": false,
   "repository": "https://github.com/nodeflip/nest-env-config",
