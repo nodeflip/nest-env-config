@@ -1,0 +1,35 @@
+{
+  "name": "nest-env-config",
+  "version": "1.0.0",
+  "description": "An environment configuration module for NestJS that allows for easy configuration using decorators.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "dependencies": {
+    "@nestjs/common": "^7.6.18",
+    "@nestjs/config": "^0.6.3",
+    "@nestjs/core": "^7.6.18",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^7.6.18",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^14.14.31",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.6",
+    "typescript": "^4.1.5"
+  },
+  "keywords": [
+    "nest-config",
+    "nest-env-config",
+    "nest-common",
+    "nest.js",
+    "typescript"
+  ],
+  "author": "Ashish Kumar",
+  "license": "MIT"
+}
