@@ -33,6 +33,11 @@
   "author": "Ashish Kumar",
   "license": "MIT",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/nodeflip"
+  },
+  "private": false,
+  "repository": "https://github.com/nodeflip/nest-env-config",
+  "engines": {
+    "node": ">=16"
   }
 }
