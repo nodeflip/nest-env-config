@@ -31,5 +31,8 @@
     "typescript"
   ],
   "author": "Ashish Kumar",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }

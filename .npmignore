@@ -1,0 +1,7 @@
+# Exclude test files from src
+/src/**/*.spec.ts
+/src/**/*.test.ts
+
+# Exclude test files from dist
+/dist/**/*.spec.js
+/dist/**/*.test.js
