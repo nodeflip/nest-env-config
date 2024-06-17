@@ -1,3 +1,5 @@
+![example workflow](https://github.com/nodeflip/nest-env-config/actions/workflows/test.yml/badge.svg)
+
 # 🚀 Nest Environment Configuration Module
 
 ## Overview
