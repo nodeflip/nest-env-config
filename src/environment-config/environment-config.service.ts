@@ -3,39 +3,26 @@ import { ConfigService } from "@nestjs/config";
 
 import { PropClassType } from "./prop.decorator";
 
-/**
- * A service that provides configuration settings by extracting them from
- * the environment variables and mapping them to a specified configuration class.
- *
- * @template T - The type of the configuration class.
- */
 @Injectable()
 export class EnvironmentConfigService<T> {
-  /**
-   * The configuration object containing the mapped environment variables.
-   */
   public readonly config: T;
-
-  /**
-   * Creates an instance of EnvironmentConfigService.
-   *
-   * @param {ConfigService} configService - The ConfigService instance to access environment variables.
-   * @param {PropClassType<T>} configClass - The configuration class type that defines the properties and their default values.
-   */
   constructor(
     private readonly configService: ConfigService,
-    configClass: PropClassType<T>
+    configClass: PropClassType<T> | PropClassType<T>[]
   ) {
-    this.config = this.getConfigObject(configClass);
+    if (Array.isArray(configClass)) {
+      this.config = configClass.reduce((acc, cls) => {
+        acc = {
+          ...acc,
+          ...this.getConfigObject(cls),
+        };
+        return acc;
+      }, {} as T);
+    } else {
+      this.config = this.getConfigObject(configClass);
+    }
   }
 
-  /**
-   * Maps the environment variables to the configuration class properties.
-   *
-   * @private
-   * @param {T} configClass - The configuration class instance.
-   * @returns {T} The configuration object with properties populated from environment variables or their default values.
-   */
   private getConfigObject(configClass: T): T {
     const configObject: any = {};
     const cls = configClass as PropClassType<T>;

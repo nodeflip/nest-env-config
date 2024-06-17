@@ -20,9 +20,13 @@ First, import the EnvironmentConfigModule in your application's module and call 
 import { Module } from '@nestjs/common';
 import { EnvironmentConfigModule } from '@nodeflip/nest-env-config';
 import { AppConfig } from './app-config';
+import { DBConfig } from './db-config';
 
 @Module({
-  imports: [EnvironmentConfigModule.forRoot(AppConfig)],
+  imports: [
+    EnvironmentConfigModule.forRoot({configClass: AppConfig}),
+    EnvironmentConfigModule.forRoot({configClass: DBConfig, serviceName: 'DB_CONFIG_SERVICE'})
+  ],
 })
 export class AppModule {}
 ```
@@ -50,15 +54,20 @@ Inject the EnvironmentConfigService into your services to access the configurati
 import { Injectable } from '@nestjs/common';
 import { EnvironmentConfigService } from '@nodeflip/nest-env-config';
 import { AppConfig } from './app-config';
+import { DBConfig } from './db-config';
 
 @Injectable()
 export class AppService {
-  constructor(private readonly configService: EnvironmentConfigService<AppConfig>) {
-    console.log(this.configService.config);
+  constructor(
+    private readonly appConfigService: EnvironmentConfigService<AppConfig>,
+    @Inject('DB_CONFIG_SERVICE') private readonly dbConfigService: EnvironmentConfigService<DBConfig>
+  ) {
+    console.log(this.appConfigService.config);
+    console.log(this.dbConfigService.config);
   }
 
   getPort(): number {
-    return this.configService.config.port;
+    return this.dbConfigService.config.port;
   }
 }
 ```
@@ -102,7 +111,7 @@ describe('EnvironmentConfigService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      imports: [EnvironmentConfigModule.forRoot(DBConfig)],
+      imports: [EnvironmentConfigModule.forRoot({configClass: DBConfig})],
     }).compile();
 
     service = module.get<EnvironmentConfigService<DBConfig>>(EnvironmentConfigService);
