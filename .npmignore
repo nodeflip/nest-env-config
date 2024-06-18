@@ -5,3 +5,4 @@
 # Exclude test files from dist
 /dist/test
 src
+jest.config.js

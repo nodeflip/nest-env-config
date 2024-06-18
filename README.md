@@ -1,4 +1,6 @@
 ![example workflow](https://github.com/nodeflip/nest-env-config/actions/workflows/test.yml/badge.svg)
+[![npm version](https://badge.fury.io/js/%40nodeflip%2Fnest-env-config.svg)](https://badge.fury.io/js/%40nodeflip%2Fnestjs-env-config)
+[![downloads](https://img.shields.io/npm/dm/@nodeflip/nest-env-config.svg)](https://www.npmjs.com/package/@nodeflip/nestjs-env-config)
 
 # 🚀 Nest Environment Configuration Module
 

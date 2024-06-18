@@ -1,6 +1,6 @@
 {
   "name": "@nodeflip/nest-env-config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An environment configuration module for NestJS that allows for easy configuration using decorators.",
   "main": "dist/index.js",
   "scripts": {
@@ -24,11 +24,26 @@
     "typescript": "^4.1.5"
   },
   "keywords": [
+    "nestjs-config",
+    "nestjs-env-config",
+    "nestjs-config-env",
+    "nestjs-common",
     "nest-config",
     "nest-env-config",
     "nest-common",
-    "nest.js",
-    "typescript"
+    "nestjs",
+    "nest",
+    "typescript",
+    "env",
+    "env variables",
+    "environement",
+    "environement variables",
+    "dotenv",
+    "module",
+    "config",
+    "nestjs config module",
+    "dynamic",
+    "decorator"
   ],
   "author": "Ashish Kumar",
   "license": "MIT",
@@ -39,5 +54,9 @@
   "repository": "https://github.com/nodeflip/nest-env-config",
   "engines": {
     "node": ">=16"
+  },
+  "homepage": "https://github.com/nodeflip/nest-env-config#readme",
+  "bugs": {
+    "url": "https://github.com/nodeflip/nest-env-config/issues"
   }
 }
